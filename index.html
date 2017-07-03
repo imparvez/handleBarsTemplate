@@ -7,7 +7,25 @@
 <body>
 	
 	<section id="content"></section>
-	<script src="assets/javascript/script.js"></script>
 
+	<!--HandleBars Library-->
+	<script src="bower_components/handlebars/handlebars.js"></script>
+
+	<!--HandleBars Template-->
+	<script id="personTemplate" type="text/template">
+		<h1>{{title}}</h1>
+		<ul class="people">
+			{{#people}} <!--To perform looping-->
+				<li class="person">
+					<h3>{{name}}</h3>
+					<div>Age: {{age}}</div>
+					<a href="mailto:{{email}}">Contact: {{name}}</a>
+				</li>
+			{{/people}}
+		</ul>
+	</script>
+
+	<!--JavaScript-->
+	<script src="assets/javascript/script.js"></script>
 </body>
 </html>

@@ -20,20 +20,6 @@
 		]
 	};
 
-	html += '<h1>'+data.title+'</h1>';
-	html += '<ul class="people">';
-
-	for(var i = 0; i < data.people.length; i++) {
-		var person = data.people[i];
-
-		html += '<li class="person">\
-					<h3>' + person.name + '</h3>\
-					<div>Age: '+ person.age +'</div>\
-					<a href="mailto:'+ person.email+'">Contact ' + person.name + '</a>\
-				</li>';
-	}
-
-	html += '</ul>';
-
-	content.innerHTML = html;
+	var template = Handlebars.compile(document.getElementById('personTemplate').innerHTML);
+	content.innerHTML = template(data);
 }());
